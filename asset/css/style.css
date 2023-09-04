@@ -22,3 +22,17 @@ p {
 .bgColor {
   background-color: #7fffd4;
 }
+.bgBlue {
+  background-color: #011627;
+}
+.bgRed {
+  background-color: red;
+}
+
+.endgame {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  color: red;
+  font-size: 80px;
+}
