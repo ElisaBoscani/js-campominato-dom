@@ -37,11 +37,23 @@ startGame.addEventListener("click", function () {
 
 const squareNumber = 100;
 function genereteElement(element, number) {
+  /* creiamo le bombe */
+  const arrayBombs = [];
+  while (arrayBombs.length < 16) {
+    const numberBomb = Math.floor(Math.random() * 100) + 1;
+    console.log(numberBomb);
+    if (!arrayBombs.includes(numberBomb)) {
+      arrayBombs.push(numberBomb);
+    }
+  }
+  console.log(arrayBombs);
+
   for (let i = 0; i < number; i++) {
     //creato il quadratini e il testo(che parte con un display non, perche si vedra solo al click del quadrato)
     const square = document.createElement("div");
     const squareText = document.createElement("p");
-    squareText.append(i + 1);
+    /* squareText.append(arrayBombs[i]); */
+
     squareText.classList.add("dNone");
     square.append(squareText);
     square.classList.add("square");
@@ -50,6 +62,10 @@ function genereteElement(element, number) {
     //cambiare il nome delle celle e il colore
     square.addEventListener("click", function () {
       changeColorText(square, squareText);
+      if (arrayBombs.includes(i + 1)) {
+        square.style.backgroundColor = "red";
+        squareText.innerHTML = "💣";
+      }
     });
   }
 }
@@ -59,19 +75,3 @@ function changeColorText(color, text) {
   color.classList.toggle("bgColor");
   text.classList.toggle("dNone");
 }
-
-/* creiamo le bombe */
-
-function randomNumber(number) {
-  return Math.floor(Math.random() * number) + 1;
-}
-console.log(randomNumber(16));
-const arrayBombs = [];
-for (let i = 0; i < arrayBombs.length; i++) {
-  const numberBomb = randomNumber(16);
-  console.log(numberBomb);
-  if (!arrayBombs.includes(numberBomb)) {
-    arrayBombs.push(numberBomb);
-  }
-}
-console.log(arrayBombs);
