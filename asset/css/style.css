@@ -1,0 +1,24 @@
+body {
+  background-color: #011627;
+}
+p {
+  color: white;
+}
+
+.square {
+  width: calc(100% / 10);
+  aspect-ratio: 1/1;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dNone {
+  display: none;
+}
+.dNoneGrid {
+  display: none;
+}
+.bgColor {
+  background-color: #7fffd4;
+}
