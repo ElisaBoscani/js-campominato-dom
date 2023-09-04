@@ -6,12 +6,13 @@ p {
 }
 
 .square {
-  width: calc(100% / 10);
+  /* width: calc(100% / 10); */
   aspect-ratio: 1/1;
   border: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #011627;
 }
 .dNone {
   display: none;

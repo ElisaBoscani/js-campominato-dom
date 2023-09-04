@@ -16,7 +16,18 @@
   <body>
     <div class="container d-flex flex-column justify-content-center mt-5">
       <button type="submit" class="btn btn-light mb-3">Inizia il gioco!</button>
+      <div>
+        <select id="difficulty" required>
+          <option value="easy">Facile</option>
+          <option value="medium">Medio</option>
+          <option value="hard">Difficile</option>
+        </select>
+      </div>
       <div id="grid" class="d-flex flex-wrap position-relative"></div>
+    </div>
+    <div id="scoreBox" class="dNone text-light text-center mt-5">
+      <h2>Punteggio</h2>
+      <span id="score"></span>
     </div>
     <script src="./asset/js/script.js"></script>
   </body>
