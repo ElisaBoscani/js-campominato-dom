@@ -34,6 +34,7 @@ startGame.addEventListener("click", function () {
 
   //creiamo le difficolta
   genereteElement(gridEl, squareNumber);
+  randomBombs(squareNumber);
 
   //l'apparire e scomparire della griglia
   if (
@@ -50,14 +51,15 @@ startGame.addEventListener("click", function () {
   }
 
   /* creiamo le bombe */
-  while (arrayBombs.length < 16) {
-    const numberBomb = Math.floor(Math.random() * 100) + 1;
+  function randomBombs(numb) {
+    while (arrayBombs.length < 16) {
+      const numberBomb = Math.floor(Math.random() * numb) + 1;
 
-    if (!arrayBombs.includes(numberBomb)) {
-      arrayBombs.push(numberBomb);
+      if (!arrayBombs.includes(numberBomb)) {
+        arrayBombs.push(numberBomb);
+      }
     }
   }
-
   for (let i = 0; i < arrayButtons.length; i++) {
     const button = arrayButtons[i];
     button.disabled = false;
